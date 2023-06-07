@@ -23,9 +23,9 @@ title('Matched filter (SRRC) response at Rx side');
 xlabel('Samples'); 
 ylabel('Amplitude');
 midSample=length(-4:1/overSampling_Factor:4);
-y_truncated=y(midSample-1:end); %Remove unwanted portions(first few samples till the peak value) 
+% y_truncated=y(midSample-1:end); %Remove unwanted portions(first few samples till the peak value) 
 %Now the first sample contains the peak value of the response. From here the samples are extracted depending on the oversampling factor 
-y_down = downsample(y_truncated,overSampling_Factor,1); 
+y_down = downsample(y,overSampling_Factor,1); 
 %here offset=1 means starting from 1st sample %retain every 8th sample 
 figure;
 stem(y_down);
